@@ -99,14 +99,15 @@ public class Dataloader implements CommandLineRunner{
           oa[6] = jo.getInt("runtime");
           toUpdate.add(oa);
           
-          Document doc = new Document("_id", jo.getString("imdb_id"));
-            // .append("title", jo.getString("title"))
-            // .append("directors", jo.getString("directors"))
-            // .append("overview", jo.getString("overview"))
-            // .append("tagline", jo.getString("tagline"))
-            // .append("genres", jo.getString("genres"))
-            // .append("imdb_rating", jo.getInt("imdb_rating"))
-            // .append("imdb_votes", jo.getInt("imdb_votes"));
+          Document doc = new Document("_id", jo.getString("imdb_id"))
+            .append("title", jo.getString("title"))
+            .append("directors", jo.getString("directors"))
+            .append("overview", jo.getString("overview"))
+            .append("tagline", jo.getString("tagline"))
+            .append("genres", jo.getString("genres"))
+            .append("imdb_rating", jo.getInt("imdb_rating"))
+            .append("imdb_votes", jo.getInt("imdb_votes"));
+            
           docsToInsert.add(doc);
           i++;
         } 
